@@ -1,0 +1,313 @@
+/*
+	Theme Name: HTML5 Blank
+	Theme URI: http://html5blank.com
+	Description: HTML5 Blank WordPress Theme
+	Version: 1.4.3
+	Author: Todd Motto (@toddmotto)
+	Author URI: http://toddmotto.com
+	Tags: Blank, HTML5, CSS3
+
+	License: MIT
+    License URI: http://opensource.org/licenses/mit-license.php
+    
+    Modified by ciaran.co.za to include TailwindCSS
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--dark-brown: #9B6D43;
+	--light-brown: #D2975E;	
+}
+
+
+html, body {
+	margin: 0;
+}
+
+h1, h2, h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 1.5em;
+	letter-spacing: 2px;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+a.button {
+	padding: 10px 25px;
+	text-align: center; 
+	border: 3px solid;
+}
+
+.header {
+	/*position: relative;*/
+}
+
+
+.how-it-works ol {
+	list-style-type: decimal;
+}
+
+.how-it-works ol li p:first-of-type {
+	font-weight: bold;
+}
+
+img.image-4 {
+	max-width: 120px;
+}
+
+.four-categories-blocks-container .col-span-1 {
+	position: relative;
+	padding: 15px;
+}
+
+.four-categories-blocks-container .col-span-1:before {
+	content: "";
+	height: 100%;
+	width: 5px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: linear-gradient( #D2975E, #9B6D43);
+}
+
+.category {
+	font-size: .6em;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.prize-name {
+	color: #9B6D43;
+	text-transform: uppercase;
+}
+
+.cash {
+	font-weight: bold;
+}
+
+
+.judges .carousel-cell {
+	height: 250px;
+	width: 250px;
+	margin-right: 15px;
+}
+
+.sponsors {
+	background: #F7F7F7;
+}
+
+.gform_fields input,
+.gform_fields select {
+	border: 2px solid var(--dark-brown);
+	border-radius: 0px;
+	padding: 10px;	
+}
+
+.gform_fields select {
+	width: 100%!important;
+	padding: 10px;
+	height: 37px;
+}
+
+.name_first label,
+.name_last label {
+	display: none!important;
+}
+
+.gform_footer input {
+	width: 100%!important;
+	transform: uppercase!important;
+	letter-spacing: 1px!important;
+	padding: 10px;
+	text-align: center;
+	border: 2px solid var(--dark-brown);
+	display: block;
+	background-color: transparent;
+	transition: .3s;
+}
+
+.gform_footer input:hover {
+	background: var(--dark-brown);
+	color: white;
+}
+
+@media screen and (min-width: 767px){
+	.video-container {
+		position: absolute;
+		bottom: -120px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*! Flickity v2.2.2
+https://flickity.metafizzy.co
+---------------------------------------------- */
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus { outline: none; }
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* draggable */
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ---- flickity-button ---- */
+
+.flickity-button {
+  position: absolute;
+  background: hsla(0, 0%, 100%, 0.75);
+  border: none;
+  color: #333;
+}
+
+.flickity-button:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.flickity-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #19F;
+}
+
+.flickity-button:active {
+  opacity: 0.6;
+}
+
+.flickity-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+  /* prevent disabled button from capturing pointer up event. #716 */
+  pointer-events: none;
+}
+
+.flickity-button-icon {
+  fill: currentColor;
+}
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  /* vertically center */
+  transform: translateY(-50%);
+}
+
+.flickity-prev-next-button.previous { left: 10px; }
+.flickity-prev-next-button.next { right: 10px; }
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: -25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.flickity-rtl .flickity-page-dots { direction: rtl; }
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
+
+
